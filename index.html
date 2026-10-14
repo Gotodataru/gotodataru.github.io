@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кирилл — UI/UX дизайнер</title>
+<meta name="description" content="Кирилл, UI/UX и продуктовый дизайнер: Figma с дизайн-системой, код на React, проверка на людях. Кейсы fightev и Tenni Wallet.">
+<!-- Превью для Telegram, hh.ru и соцсетей. og:image и og:url — абсолютные адреса;
+     если хаб будет выложен не на gotodataru.github.io, поменять оба. -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gotodataru.github.io/">
+<meta property="og:title" content="Кирилл — UI/UX и продуктовый дизайнер">
+<meta property="og:description" content="Проектирую интерфейсы и довожу их до работающего продукта. Кейсы: fightev и Tenni Wallet.">
+<meta property="og:image" content="https://gotodataru.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='5' fill='white'/%3E%3C/svg%3E">
+<style>
+@font-face {
+  font-family: 'Wix Madefor Text';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(fonts/WixMadeforText-normal-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Wix Madefor Text';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(fonts/WixMadeforText-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(fonts/Literata-normal-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(fonts/Literata-normal-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(fonts/Literata-italic-cyrillic.woff2) format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+@font-face {
+  font-family: 'Literata';
+  font-style: italic;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url(fonts/Literata-italic-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* Минимализм: белый лист, графит, тонкие линии. Цвета почти нет —
+   основной цвет живёт в обложках кейсов (тёмные, с зелёным); акцент на странице — их приглушённое эхо.
+   Контраст: вторичный текст 6.7:1, третичный 4.6:1 на белом.
+   Шрифты: Literata (заголовки) + Wix Madefor Text (текст).
+   Акцент — лесной зелёный, точечно: ключевая фраза, индексы, стрелки, наведение.
+   Типографика: прямое Literata — факты, курсив Literata — голос (связки, подписи, номера), Wix Madefor — текст.
+   Крупные заголовки в два веса: ключевые слова жирные и тёмные (<b>), связки тонкие и серые. */
+:root {
+  --bg: #FFFFFF;
+  --ink: #111111;
+  --ink-2: #454545;   /* 9.7:1 — описания */
+  --ink-3: #666666;   /* 5.7:1 — подписи */
+  --line: #E8E8E6;
+  --shot: #0B0B0C;
+  --ease: cubic-bezier(.16, 1, .3, 1);
+
+  --display: 'Literata', Georgia, serif;
+  --display-weight: 700;   /* заголовки и ключевые слова */
+  --display-light: 300;    /* связки в крупных заголовках */
+  --display-track: -.035em;
+  --accent: #2F6B47;       /* лесной: 6.3:1 на белом */
+  --accent-dark: #7FBF96;
+  --sans: 'Wix Madefor Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  --bg: #0E0E0E; --ink: #EDEDEB; --ink-2: #BDBDBA; --ink-3: #9C9C99; --line: #242424; --shot: #000; --accent: var(--accent-dark);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 430 17px/1.65 var(--sans); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  font-kerning: normal; font-feature-settings: 'kern', 'liga';
+  transition: background-color .3s ease, color .3s ease;
+}
+[data-lang="ru"] [lang="en"], [data-lang="en"] [lang="ru"] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; height: auto; }
+::selection { background: var(--accent); color: var(--bg); }
+:focus-visible { outline: 1.5px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+@media (max-width: 640px) { .wrap { padding: 0 16px; } }
+
+.display {
+  font-family: var(--display); font-weight: var(--display-weight); letter-spacing: var(--display-track);
+  font-optical-sizing: auto;
+}
+.display--split { color: var(--ink); }
+strong { font-weight: 600; color: var(--ink); }
+h1, h2, h3, h4 { text-wrap: balance; }
+p, li, dd { text-wrap: pretty; }
+/* Курсив Literata — «голос» страницы: связки, номера, подписи, метки */
+.it { font-family: var(--display); font-style: italic; font-weight: 400; letter-spacing: -.01em; }
+/* Верхний индекс у заголовков: Кейсы⁰², fightev^реальный продукт */
+.idx {
+  font-family: var(--display); font-style: italic; font-weight: 400; letter-spacing: 0;
+  font-size: .36em; line-height: 0; vertical-align: .95em; margin-left: .18em; color: var(--accent);
+  font-variant-numeric: lining-nums;
+}
+/* Связки («и довожу их») — чёрным, другим шрифтом: курсив Literata или рубленый текстовый */
+.display--split .conn { font-style: italic; font-weight: 400; letter-spacing: -.02em; }
+.display--split b { font-weight: var(--display-weight); color: var(--ink); }
+.accent, .display--split .accent { color: var(--accent); }
+.about__text .accent { font-style: italic; }
+
+/* Ссылка со стрелкой: подчёркивание рисуется при наведении */
+.link {
+  display: inline-flex; align-items: center; gap: 6px; font-weight: 600;
+  background: linear-gradient(var(--accent), var(--accent)) 0 100% / 0 1px no-repeat;
+  padding-bottom: 2px; transition: background-size .35s var(--ease);
+}
+.link:hover { background-size: 100% 1px; }
+.link svg { width: 15px; height: 15px; flex: none; color: var(--accent); transition: transform .35s var(--ease); }
+.link:hover svg { transform: translate(2px, -2px); }
+.link--down:hover svg { transform: translateY(2px); }
+
+/* --- Шапка --- */
+.top { display: flex; align-items: center; justify-content: space-between; padding: 28px 0; font-size: 15px; }
+.top__name { font-weight: 600; display: inline-flex; align-items: center; gap: 10px; }
+.top__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.top__ctrl { display: flex; gap: 20px; }
+.top__ctrl button {
+  font: inherit; color: var(--ink-2); background: none; border: 0; padding: 4px 0; cursor: pointer;
+}
+.top__ctrl button:hover { color: var(--ink); }
+
+/* --- Первый экран --- */
+.hero { padding: 104px 0 136px; }
+.hero__role { display: flex; align-items: center; gap: 16px; color: var(--ink-2); font-size: 13px;
+  letter-spacing: .09em; text-transform: uppercase; margin: 0 0 32px; }
+.hero__role::before { content: ""; width: 48px; height: 1px; background: var(--ink); flex: none; }
+.hero h1 { font-size: clamp(38px, 6.6vw, 84px); line-height: 1.01; margin: 0; max-width: 17ch; }
+.hero__lead { font-size: clamp(18px, 1.8vw, 20px); color: var(--ink-2); max-width: 40ch; margin: 36px 0 44px; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 32px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 999px;
+  background: var(--ink); color: var(--bg); font-weight: 600; transition: transform .35s var(--ease), background-color .35s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); background: var(--accent); }
+.btn svg { width: 16px; height: 16px; }
+
+/* --- Заголовок секции --- */
+.head { display: flex; align-items: baseline; justify-content: space-between; gap: 24px;
+  padding-top: 20px; border-top: 1px solid var(--line); margin-bottom: 56px; }
+.head h2 { font-size: clamp(32px, 4vw, 48px); line-height: 1.02; margin: 0; }
+.head__label { font-family: var(--display); font-style: italic; font-size: 18px; color: var(--accent); }
+
+/* --- Кейсы --- */
+.cases { padding-bottom: 72px; }
+.case { margin-bottom: 128px; }
+.case__fig { margin: 0; }
+.case__cap { margin-top: 12px; display: flex; justify-content: space-between; gap: 16px; font-size: 15px; color: var(--ink-3); }
+.case__cap .it { color: var(--ink-2); font-weight: 500; }
+.case__shot { display: block; border-radius: 14px; overflow: hidden; background: var(--shot); aspect-ratio: 1600 / 974; }
+.case__shot img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease); }
+.case__shot:hover img { transform: scale(1.015); }
+:root[data-theme="dark"] .case__shot { box-shadow: 0 0 0 1px var(--line); }
+.case__info { display: grid; grid-template-columns: 5fr 7fr; gap: 48px; margin-top: 40px; }
+.case__num { font-family: var(--display); font-style: italic; font-size: 18px; color: var(--accent); font-variant-numeric: lining-nums; }
+.case h3 { font-size: clamp(34px, 3.6vw, 44px); line-height: 1; margin: 10px 0 14px; }
+.case__lead { color: var(--ink-2); font-size: 18px; line-height: 1.55; margin: 0 0 16px; max-width: 34ch; }
+.case__tags { color: var(--ink-3); font-size: 14px; }
+.facts { list-style: none; margin: 0 0 28px; padding: 0; border-top: 1px solid var(--line); }
+.facts li { padding: 16px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 120px 1fr; gap: 16px; }
+.facts b { font-family: var(--display); font-style: italic; font-weight: 600; color: var(--ink); font-size: 17px; letter-spacing: -.01em; }
+.facts span { color: var(--ink-2); }
+.links { display: flex; flex-wrap: wrap; gap: 12px 30px; font-size: 17px; }
+@media (max-width: 860px) {
+  .case { margin-bottom: 88px; }
+  .case__info { grid-template-columns: 1fr; gap: 24px; margin-top: 24px; }
+  .facts li { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* --- Как работаю --- */
+.section { padding-bottom: 136px; }
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.col__n { font-family: var(--display); font-style: italic; font-weight: 300; font-size: 64px; line-height: .9; color: var(--accent); font-variant-numeric: lining-nums; }
+.col { border-top: 1px solid var(--line); padding-top: 24px; }
+.col h4 { font-size: 26px; line-height: 1.08; margin: 20px 0 12px; }
+.col p { margin: 0; color: var(--ink-2); line-height: 1.6; }
+@media (max-width: 860px) { .cols { grid-template-columns: 1fr; gap: 40px; } }
+
+/* --- Обо мне --- */
+.about { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; }
+.about__text p { font-family: var(--display); font-weight: 400; font-size: clamp(24px, 2.6vw, 32px); line-height: 1.3; letter-spacing: -.02em; margin: 0 0 28px; max-width: 26ch; }
+.about__text p + p { font-family: var(--sans); font-size: 17px; line-height: 1.6; letter-spacing: 0; color: var(--ink-2); max-width: 44ch; }
+.stack { margin: 0; border-top: 1px solid var(--line); }
+.stack div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.stack dt { font-family: var(--display); font-style: italic; font-weight: 600; color: var(--ink); font-size: 17px; letter-spacing: -.01em; }
+.stack dd { color: var(--ink-2); }
+.stack dd { margin: 0; }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; gap: 40px; } }
+
+/* --- Контакты --- */
+.contact { padding-bottom: 120px; }
+.contact h2 { font-size: clamp(44px, 7vw, 96px); line-height: .95; margin: 0 0 20px; }
+.contact p { color: var(--ink-2); margin: 0 0 44px; }
+.contact .links { gap: 16px 40px; font-size: clamp(18px, 2vw, 22px); }
+.contact .link svg { width: 16px; height: 16px; }
+
+footer { border-top: 1px solid var(--line); padding: 24px 0 40px; display: flex; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; color: var(--ink-3); font-size: 14px; }
+
+/* Мягкое появление при прокрутке — только если JS работает и движение не выключено */
+.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js .reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .case__shot img, .btn, .link, .link svg { transition: none; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="down" viewBox="0 0 16 16"><path d="M8 3v10M3.5 8.5L8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+<div class="wrap">
+
+  <header class="top">
+    <a class="top__name" href="#top"><span class="top__dot" aria-hidden="true"></span><span lang="ru">Кирилл</span><span lang="en">Kirill</span></a>
+    <div class="top__ctrl">
+      <button id="lang" type="button" aria-label="Switch language / Сменить язык">EN</button>
+      <button id="theme" type="button"><span lang="ru">Тёмная</span><span lang="en">Dark</span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="hero__role"><span lang="ru">UI/UX и&nbsp;продуктовый дизайнер</span><span lang="en">UI/UX and product designer</span></p>
+      <h1 class="display display--split">
+        <span lang="ru"><b>Проектирую интерфейсы</b> <span class="conn">и&nbsp;довожу их</span> <b>до&nbsp;<span class="accent">работающего продукта</span></b></span>
+        <span lang="en"><b>I design interfaces</b> <span class="conn">and take them all the way</span> <b>to a <span class="accent">working product</span></b></span>
+      </h1>
+      <p class="hero__lead">
+        <span lang="ru"><strong>Figma с&nbsp;дизайн-системой, код на&nbsp;React, проверка на&nbsp;людях.</strong> Оба кейса ниже работают&nbsp;— их&nbsp;можно открыть и&nbsp;потрогать.</span>
+        <span lang="en"><strong>A Figma design system, React code, testing with real people.</strong> Both cases below actually work&nbsp;— open them and click around.</span>
+      </p>
+      <div class="actions">
+        <a class="btn" href="#work"><span lang="ru">Смотреть кейсы</span><span lang="en">See the work</span><svg aria-hidden="true"><use href="#down"/></svg></a>
+        <a class="link link--down" href="#about"><span lang="ru">Обо мне</span><span lang="en">About me</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+        <a class="link" href="#contact"><span lang="ru">Написать</span><span lang="en">Get in touch</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+    </section>
+
+    <section class="cases" id="work">
+      <div class="head">
+        <h2 class="display"><span lang="ru">Кейсы</span><span lang="en">Work</span><sup class="idx">02</sup></h2>
+      </div>
+
+      <article class="case reveal">
+        <figure class="case__fig">
+        <a class="case__shot" href="https://gotodataru.github.io/fightev/case/" aria-label="fightev — кейс">
+          <img src="assets/fightev.webp" width="1600" height="974" alt="fightev: разбор боя на десктопе и телефоне, прогноз с пометкой «Модель ошиблась»" loading="lazy">
+        </a>
+        <figcaption class="case__cap"><span class="it"><span lang="ru">Разбор боя: модель ошиблась&nbsp;— и&nbsp;сайт это показывает</span><span lang="en">A fight breakdown: the model got it wrong&nbsp;— and the site says so</span></span><span lang="ru">десктоп и&nbsp;телефон</span><span lang="en">desktop and phone</span></figcaption>
+        </figure>
+        <div class="case__info">
+          <div>
+            <div class="case__num">№&#8201;01</div>
+            <h3 class="display">fightev<sup class="idx"><span lang="ru">реальный продукт</span><span lang="en">real product</span></sup></h3>
+            <p class="case__lead">
+              <span lang="ru">Прогноз ML-модели на&nbsp;каждый бой турнира UFC и&nbsp;честная история её&nbsp;ошибок.</span>
+              <span lang="en">An ML forecast for every fight on a UFC card and an honest record of its misses.</span>
+            </p>
+            <div class="case__tags"><span lang="ru">RU / EN · две темы · Figma: 18&nbsp;компонентов, 30&nbsp;экранов</span><span lang="en">RU / EN · two themes · Figma: 18 components, 30 screens</span></div>
+          </div>
+          <div>
+            <ul class="facts">
+              <li><b lang="ru">Задача</b><b lang="en">Problem</b><span lang="ru">Прогнозов на&nbsp;бои много, но&nbsp;<strong>непонятно, каким верить</strong>: свои ошибки их&nbsp;авторы не&nbsp;показывают.</span><span lang="en">Fight predictions are everywhere, but <strong>it’s hard to know which to trust</strong>: their authors don’t show their misses.</span></li>
+              <li><b lang="ru">Решение</b><b lang="en">Solution</b><span lang="ru">Разбор каждого боя и&nbsp;отдельная страница точности: модель сравнивается с&nbsp;рынком, <strong>промахи на&nbsp;виду</strong>.</span><span lang="en">A breakdown for every fight and a separate accuracy page: the model is compared to the market, <strong>misses stay visible</strong>.</span></li>
+              <li><b lang="ru">Итог</b><b lang="en">Result</b><span lang="ru">Тест на&nbsp;5&nbsp;людях: <strong>не&nbsp;меньше 4&nbsp;из&nbsp;5</strong> с&nbsp;первого экрана поняли, о&nbsp;чём сайт, и&nbsp;нашли, где проверить прогноз.</span><span lang="en">Tested with 5 people: <strong>at least 4&nbsp;of&nbsp;5</strong> got what the site is from the first screen and found where to check a forecast.</span></li>
+              <li><b lang="ru">Роль</b><b lang="en">Role</b><span lang="ru">Продукт, дизайн, фронтенд, данные&nbsp;— <strong>в&nbsp;команде один</strong></span><span lang="en">Product, design, front end, data&nbsp;— <strong>a team of one</strong></span></li>
+            </ul>
+            <div class="links">
+              <a class="link" href="https://gotodataru.github.io/fightev/case/"><span lang="ru">Кейс</span><span lang="en">Case study</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+              <a class="link" href="https://gotodataru.github.io/fightev/"><span lang="ru">Сайт</span><span lang="en">Live site</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+              <a class="link" href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV">Figma<svg aria-hidden="true"><use href="#arr"/></svg></a>
+              <a class="link" href="https://github.com/Gotodataru/fightev">GitHub<svg aria-hidden="true"><use href="#arr"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <figure class="case__fig">
+        <a class="case__shot" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/" aria-label="Tenni Wallet — кейс">
+          <img src="assets/tenni.webp" width="1600" height="974" alt="Tenni Wallet: три экрана оплаты — главный экран с картой, «поднесите к терминалу» и «оплачено»" loading="lazy">
+        </a>
+        <figcaption class="case__cap"><span class="it"><span lang="ru">Оплата в&nbsp;три шага: главный экран, у&nbsp;терминала, оплачено</span><span lang="en">Paying in three steps: home, at the reader, paid</span></span><span lang="ru">прототип в&nbsp;коде</span><span lang="en">prototype in code</span></figcaption>
+        </figure>
+        <div class="case__info">
+          <div>
+            <div class="case__num">№&#8201;02</div>
+            <h3 class="display">Tenni Wallet<sup class="idx"><span lang="ru">концепт</span><span lang="en">concept</span></sup></h3>
+            <p class="case__lead">
+              <span lang="ru">Криптокошелёк с&nbsp;картой: платишь монетой, как обычной картой, без&nbsp;пересчёта в&nbsp;уме и&nbsp;страха ошибиться адресом.</span>
+              <span lang="en">A crypto wallet with a card: pay with a coin like any card, with no mental math and no fear of a wrong address.</span>
+            </p>
+            <div class="case__tags"><span lang="ru">Финтех · кейс на&nbsp;английском · Figma: 39&nbsp;компонентов, 40&nbsp;экранов в&nbsp;двух темах</span><span lang="en">Fintech · Figma: 39 components, 40 screens in two themes</span></div>
+          </div>
+          <div>
+            <ul class="facts">
+              <li><b lang="ru">Задача</b><b lang="en">Problem</b><span lang="ru">Деньги лежат в&nbsp;крипте, а&nbsp;тратить их&nbsp;нужно в&nbsp;обычном мире&nbsp;— с&nbsp;<strong>пересчётом в&nbsp;уме и&nbsp;страхом ошибиться адресом</strong>.</span><span lang="en">Money sits in crypto but gets spent in the real world&nbsp;— with <strong>mental math and the fear of a wrong address</strong>.</span></li>
+              <li><b lang="ru">Решение</b><b lang="en">Solution</b><span lang="ru">Монета выбирается до&nbsp;касания карты, сумма и&nbsp;курс приходят после; <strong>у&nbsp;каждой ошибки, которая стоит денег, есть защита</strong>.</span><span lang="en">The coin is picked before the tap, the amount and rate come after; <strong>every mistake that costs money has a guard</strong>.</span></li>
+              <li><b lang="ru">Итог</b><b lang="en">Result</b><span lang="ru"><strong>Прототип в&nbsp;коде и&nbsp;в&nbsp;Figma: 7&nbsp;сценариев</strong>, включая отказ оплаты, ошибки ввода и&nbsp;заморозку карты.</span><span lang="en"><strong>A prototype in code and in Figma: 7 flows</strong>, including a declined payment, input errors and a frozen card.</span></li>
+              <li><b lang="ru">Роль</b><b lang="en">Role</b><span lang="ru">Концепт, дизайн-система в&nbsp;React и&nbsp;Figma, редизайн после ревью дизайнера</span><span lang="en">Concept, a design system in React and Figma, a redesign after a design review</span></li>
+            </ul>
+            <div class="links">
+              <a class="link" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/"><span lang="ru">Кейс</span><span lang="en">Case study</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+              <a class="link" href="https://www.figma.com/proto/9VfEHWlaHH0LBl94VlaIQ1/Tenni-Wallet-V2?node-id=2003-6941&amp;starting-point-node-id=2003%3A6941"><span lang="ru">Прототип</span><span lang="en">Prototype</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+              <a class="link" href="https://www.figma.com/design/9VfEHWlaHH0LBl94VlaIQ1/Tenni-Wallet-V2">Figma<svg aria-hidden="true"><use href="#arr"/></svg></a>
+              <a class="link" href="https://github.com/Gotodataru/Tenni_Wallet_UIUX">GitHub<svg aria-hidden="true"><use href="#arr"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="head"><h2 class="display"><span lang="ru">Как я&nbsp;работаю</span><span lang="en">How I work</span><sup class="idx">03</sup></h2></div>
+      <div class="cols">
+        <div class="col reveal">
+          <div class="col__n" aria-hidden="true">1</div>
+          <h4 class="display"><span lang="ru">Сначала ограничения</span><span lang="en">Constraints first</span></h4>
+          <p><span lang="ru">Разбираюсь, как сценарий работает в&nbsp;жизни. В&nbsp;Tenni переделал оплату целиком: <strong>терминал не&nbsp;может прислать сумму до&nbsp;касания карты</strong>.</span><span lang="en">I check how a flow works in real life. In Tenni I rebuilt Pay: <strong>a terminal can’t send the amount before the card taps</strong>.</span></p>
+        </div>
+        <div class="col reveal">
+          <div class="col__n" aria-hidden="true">2</div>
+          <h4 class="display"><span lang="ru">Система, а&nbsp;не&nbsp;экраны</span><span lang="en">A system, not screens</span></h4>
+          <p><span lang="ru">Токены, компоненты и&nbsp;все состояния&nbsp;— загрузка, ошибка, пусто, мало данных. <strong>Разработчику не&nbsp;нужно угадывать.</strong></span><span lang="en">Tokens, components and every state&nbsp;— loading, error, empty, thin data. <strong>Nothing left for a developer to guess.</strong></span></p>
+        </div>
+        <div class="col reveal">
+          <div class="col__n" aria-hidden="true">3</div>
+          <h4 class="display"><span lang="ru">Проверка, а&nbsp;не&nbsp;мнение</span><span lang="en">Evidence over opinion</span></h4>
+          <p><span lang="ru">Тест на&nbsp;людях с&nbsp;<strong>порогами, записанными заранее</strong>. Макет сверяю с&nbsp;работающим сайтом скриптом, а&nbsp;не&nbsp;на&nbsp;глаз.</span><span lang="en">Tests with people against <strong>thresholds set in advance</strong>. Mockups checked against the live site by script, not by eye.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="head"><h2 class="display"><span lang="ru">Обо мне</span><span lang="en">About</span></h2></div>
+      <div class="about">
+        <div class="about__text">
+          <p><span lang="ru">10&nbsp;лет продавал сложные технические решения в&nbsp;B2B, потом с&nbsp;нуля построил стартап. Поэтому смотрю на&nbsp;интерфейс как на&nbsp;<span class="accent">часть бизнеса</span>: кто платит, за&nbsp;что и&nbsp;где теряются деньги.</span><span lang="en">Ten years selling complex technical solutions in B2B, then I built a startup from scratch. So I see an interface as <span class="accent">part of the business</span>: who pays, for what, and where the money leaks.</span></p>
+          <p><span lang="ru">Ищу роль UI/UX или продуктового дизайнера в&nbsp;команде&nbsp;— особенно в&nbsp;<strong>финтехе, B2B и&nbsp;продуктах с&nbsp;данными</strong>.</span><span lang="en">Looking for a UI/UX or product designer role in a team — especially in <strong>fintech, B2B and data products</strong>.</span></p>
+        </div>
+        <dl class="stack">
+          <div><dt lang="ru">Продажи</dt><dt lang="en">Sales</dt><dd lang="ru">10&nbsp;лет B2B: решение под задачу клиента, переговоры, сделка до&nbsp;запуска</dd><dd lang="en">10 years B2B: fitting a solution to the client, negotiation, the deal through launch</dd></div>
+          <div><dt lang="ru">Стартап</dt><dt lang="en">Startup</dt><dd lang="ru">Построил с&nbsp;нуля: от&nbsp;идеи до&nbsp;работающего продукта</dd><dd lang="en">Built from zero: from the idea to a working product</dd></div>
+          <div><dt lang="ru">Дизайн</dt><dt lang="en">Design</dt><dd lang="ru">Figma: переменные, компоненты, прототипы</dd><dd lang="en">Figma: variables, components, prototypes</dd></div>
+          <div><dt lang="ru">Код</dt><dt lang="en">Code</dt><dd>React, TypeScript</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="head"><span class="head__label"><span lang="ru">Контакты</span><span lang="en">Contact</span></span></div>
+      <h2 class="display display--split"><span lang="ru"><span class="conn">Давайте</span> <b class="accent">поговорим</b></span><span lang="en"><span class="conn">Let’s</span> <b class="accent">talk</b></span></h2>
+      <p><span lang="ru">Быстрее всего&nbsp;— в&nbsp;Telegram.</span><span lang="en">Telegram is the fastest way to reach me.</span></p>
+      <div class="links">
+        <a class="link" href="https://t.me/gotodata">Telegram&nbsp;<span class="it">@gotodata</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+        <a class="link" href="https://github.com/Gotodataru">GitHub<svg aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 <span lang="ru">Кирилл</span><span lang="en">Kirill</span></span>
+    <span><span lang="ru">Набрано шрифтами</span><span lang="en">Set in</span> <span class="it">Literata</span> <span lang="ru">и</span><span lang="en">and</span> Wix Madefor Text</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  root.classList.add('js');
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  var params = new URLSearchParams(location.search);
+
+
+  var lang = params.get('lang') || get('lang') || 'ru';
+  var langBtn = document.getElementById('lang');
+  function applyLang(l) {
+    root.dataset.lang = l; root.lang = l;
+    langBtn.textContent = l === 'ru' ? 'EN' : 'RU';
+    document.title = l === 'ru' ? 'Кирилл — UI/UX дизайнер' : 'Kirill — UI/UX designer';
+  }
+  applyLang(lang);
+  langBtn.addEventListener('click', function () { lang = lang === 'ru' ? 'en' : 'ru'; applyLang(lang); set('lang', lang); });
+
+  var themeBtn = document.getElementById('theme');
+  function applyTheme(t) {
+    if (t === 'dark') root.dataset.theme = 'dark'; else delete root.dataset.theme;
+    themeBtn.innerHTML = t === 'dark'
+      ? '<span lang="ru">Светлая</span><span lang="en">Light</span>'
+      : '<span lang="ru">Тёмная</span><span lang="en">Dark</span>';
+  }
+  var theme = params.get('theme') || get('theme') || 'light';
+  applyTheme(theme);
+  themeBtn.addEventListener('click', function () { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(theme); set('theme', theme); });
+
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else { items.forEach(function (el) { el.classList.add('is-in'); }); }
+})();
+</script>
+</body>
+</html>
