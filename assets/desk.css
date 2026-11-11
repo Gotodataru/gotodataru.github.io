@@ -1,0 +1,114 @@
+/* Портфолио Кирилла, версия 3 «Стол».
+   Первый экран — рабочий стол macOS: свои обои, проекты лежат на нём окнами со скриншотами (окна можно двигать),
+   заметка с приветствием, стикер с цифрами, файлы и док. Всё ниже — разделы версии 2 (canvas.css подключается первым). */
+:root { --bar-h: 28px; }
+
+/* ---------- строка меню ---------- */
+.menubar { position: fixed; z-index: 70; inset: 0 0 auto 0; height: 28px; display: flex; align-items: center; justify-content: space-between; padding: 0 18px;
+  background: rgba(250, 249, 245, .62); -webkit-backdrop-filter: blur(24px) saturate(1.5); backdrop-filter: blur(24px) saturate(1.5);
+  border-bottom: 1px solid rgba(255, 255, 255, .4); font-size: 13px; font-weight: 500; color: #111; }
+.menubar nav, .menubar .sys { display: flex; align-items: center; gap: 4px; }
+.menubar .mark { width: 18px; height: 18px; margin-right: 8px; border-radius: 5px; background: var(--accent); color: #fff; display: grid; place-items: center; font-size: 11px; font-weight: 600; }
+.menubar b { font-weight: 600; margin-right: 10px; }
+.menubar a { padding: 3px 10px; border-radius: 5px; transition: background .15s; }
+.menubar a:hover, .menubar a.is-active { background: rgba(0, 0, 0, .1); }
+.menubar button { border: 0; background: none; padding: 3px 10px; border-radius: 5px; font-weight: 600; font-size: 13px; }
+.menubar button:hover { background: rgba(0, 0, 0, .1); }
+.menubar .clock { padding: 0 6px; font-variant-numeric: tabular-nums; }
+@media (max-width: 720px) { .menubar { padding: 0 10px; } .menubar nav a:nth-of-type(n+3) { display: none; } .menubar .clock { display: none; } }
+
+/* ---------- рабочий стол ---------- */
+.desk { position: relative; height: 100vh; height: 100svh; min-height: 660px; overflow: hidden; isolation: isolate; background: #0f2a21; }
+.wall { position: absolute; inset: 0; z-index: -1; background: linear-gradient(170deg, #0c241d 0%, #123428 40%, #1c5240 74%, #27694f 100%); }
+.wall i { position: absolute; display: block; border-radius: 50%; filter: blur(3px); }
+.wall .a { width: 1400px; height: 1100px; left: -480px; top: -520px; background: radial-gradient(closest-side, rgba(226, 240, 222, .62), rgba(226, 240, 222, 0) 100%); }
+.wall .b { width: 1300px; height: 900px; right: -380px; top: 6%; background: radial-gradient(closest-side, rgba(111, 191, 147, .55), rgba(111, 191, 147, 0) 100%); }
+.wall .c { width: 1200px; height: 800px; left: 6%; bottom: -460px; background: radial-gradient(closest-side, rgba(70, 160, 118, .65), rgba(70, 160, 118, 0) 100%); }
+.wall .d { width: 900px; height: 600px; right: 8%; bottom: -300px; background: radial-gradient(closest-side, rgba(244, 226, 178, .42), rgba(244, 226, 178, 0) 100%); }
+.wall .band { width: 1800px; height: 180px; left: -200px; top: 46%; border-radius: 90px; filter: blur(28px); background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, .13), rgba(255, 255, 255, 0)); transform: rotate(-16deg); }
+
+.dstage { position: absolute; inset: 28px 0 112px; container-type: size; }
+
+/* ---------- окна ---------- */
+@keyframes winIn { from { opacity: 0; transform: translateY(14px) scale(.965); } to { opacity: 1; transform: none; } }
+.win { position: absolute; display: flex; flex-direction: column; border-radius: 11px; overflow: hidden; background: rgba(248, 247, 243, .94); border: 1px solid rgba(255, 255, 255, .55);
+  box-shadow: 0 0 0 .5px rgba(0, 0, 0, .35), 0 28px 60px rgba(0, 0, 0, .38), 0 6px 16px rgba(0, 0, 0, .2); }
+@media (prefers-reduced-motion: no-preference) {
+  .win { animation: winIn .8s var(--ease) both; }
+  .win:nth-child(2) { animation-delay: .08s; } .win:nth-child(3) { animation-delay: .16s; } .win:nth-child(4) { animation-delay: .24s; } .win:nth-child(5) { animation-delay: .32s; }
+}
+.win.is-drag { box-shadow: 0 0 0 .5px rgba(0, 0, 0, .4), 0 40px 80px rgba(0, 0, 0, .45), 0 10px 22px rgba(0, 0, 0, .25); }
+.win__bar { position: relative; flex: none; height: 32px; display: flex; align-items: center; padding: 0 12px; background: linear-gradient(#f4f3ef, #e9e8e3); border-bottom: 1px solid rgba(0, 0, 0, .12); user-select: none; touch-action: none; }
+.win__bar i { width: 12px; height: 12px; margin-right: 8px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 .5px rgba(0, 0, 0, .2); flex: none; }
+.win__bar i:nth-child(1) { background: #ff5f57; } .win__bar i:nth-child(2) { background: #febc2e; } .win__bar i:nth-child(3) { background: #28c840; }
+.win__bar b { position: absolute; left: 70px; right: 70px; text-align: center; font-size: 12.5px; font-weight: 500; color: #4a4a47; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (min-width: 900px) { .win__bar { cursor: grab; } .win.is-drag .win__bar { cursor: grabbing; } }
+.win__shot { position: relative; display: block; background: #0a0a0a; }
+.win__shot .open { position: absolute; right: 14px; top: 14px; padding: 7px 12px; border-radius: 7px; background: var(--accent); color: #fff; font: 600 12.5px/1 var(--font); opacity: 0; transform: translateY(-4px); transition: opacity .2s, transform .2s; box-shadow: 0 6px 16px rgba(0, 0, 0, .35); }
+.win__shot:hover .open, .win__shot:focus-visible .open { opacity: 1; transform: none; }
+@media (hover: none) { .win__shot .open { opacity: 1; transform: none; } }
+.win__shot img { display: block; width: 100%; height: auto; aspect-ratio: 1600 / 974; object-fit: cover; }
+.win__shot:hover img { filter: brightness(1.06); }
+
+/* заметка с приветствием */
+.w-note { left: 3.5%; top: 5%; width: min(31cqw, 520px); background: #FFFCF3; z-index: 5; }
+.w-note .win__bar { background: linear-gradient(#f6f1de, #ece5cc); }
+.w-note__body { padding: 20px 24px 24px; }
+.w-note small { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-3); margin-bottom: 12px; }
+.w-note small::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-2); flex: none; box-shadow: 0 0 0 3px var(--accent-soft); }
+.w-note h1 { font-size: clamp(24px, 2.35cqw, 36px); font-weight: 600; letter-spacing: -.045em; line-height: 1.05; margin-bottom: 14px; }
+.w-note p { font-size: 14.5px; line-height: 1.5; color: var(--ink-2); }
+.w-note p b { color: var(--ink); font-weight: 600; }
+.w-note p + p { margin-top: 8px; }
+.w-note__link { display: inline-flex; align-items: center; gap: 8px; margin-top: 16px; padding: 9px 16px; border-radius: 999px; background: var(--ink); color: #fff; font-size: 14px; font-weight: 500; transition: background .25s; }
+.w-note__link:hover { background: var(--accent); }
+.w-note__link svg { width: 12px; height: 12px; }
+
+.w-app { left: 35%; top: 3%; width: 45cqw; }
+.w-tenni { left: 20%; top: 56%; width: min(36cqw, calc(70cqh - 52px)); }
+@media (max-width: 1180px) and (min-width: 900px) { .w-tenni { left: 30%; } .w-sticky { left: 69%; } }
+@media (max-height: 760px) and (min-width: 900px) { .w-tenni { top: 60%; width: min(36cqw, 57cqh); } }
+/* стикер с цифрами */
+.w-sticky { left: 66%; top: min(62%, calc(100cqh - 240px)); width: 16cqw; min-width: 200px; background: #F6EAB4; border-color: rgba(255, 255, 255, .4); border-radius: 4px; }
+.w-sticky .win__bar { height: 18px; background: #EBDB9C; border-bottom: 0; padding: 0; }
+.w-sticky__body { padding: 12px 16px 16px; }
+.w-sticky div { line-height: 1.1; }
+.w-sticky div + div { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(80, 64, 10, .18); }
+.w-sticky b { display: block; font-size: 22px; font-weight: 600; letter-spacing: -.02em; color: #3b3210; word-spacing: .08em; }
+.w-sticky span { display: block; margin-top: 3px; font-size: 12px; color: #6b5f2e; line-height: 1.25; }
+
+/* файлы на столе: миниатюры, как у скриншотов и PDF в macOS */
+.icons { position: absolute; z-index: 2; top: 42px; right: 22px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.ico { width: 124px; padding: 6px 4px 8px; border-radius: 8px; display: flex; flex-direction: column; align-items: center; gap: 7px; color: #fff; text-align: center; font-size: 12px; font-weight: 500; line-height: 1.25; text-shadow: 0 1px 3px rgba(0, 0, 0, .6); }
+.ico .thumb { display: block; width: 104px; border-radius: 5px; overflow: hidden; background: #fff; box-shadow: 0 0 0 1px rgba(255, 255, 255, .5), 0 8px 18px rgba(0, 0, 0, .4); transition: transform .3s var(--ease); }
+.ico--page .thumb { width: 72px; }
+.ico .thumb img { display: block; width: 100%; height: auto; }
+.ico:hover { background: rgba(255, 255, 255, .16); }
+.ico:hover .thumb { transform: scale(1.04); }
+
+/* ---------- док ---------- */
+.dock { position: absolute; z-index: 60; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; padding: 10px 14px;
+  border-radius: 26px; background: rgba(255, 255, 255, .22); border: 1px solid rgba(255, 255, 255, .45); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .4); max-width: calc(100% - 24px); }
+.dock a { position: relative; display: block; width: 62px; height: 62px; flex: none; border-radius: 15px; transition: transform .25s var(--ease); }
+.dock a svg { width: 100%; height: 100%; border-radius: 15px; box-shadow: 0 3px 8px rgba(0, 0, 0, .25); }
+.dock a:hover { transform: translateY(-10px) scale(1.14); }
+.dock a em { position: absolute; left: 50%; bottom: calc(100% + 12px); transform: translateX(-50%); white-space: nowrap; font: 500 12px var(--font); font-style: normal; color: #fff; background: rgba(30, 30, 30, .85); padding: 4px 9px; border-radius: 6px; opacity: 0; pointer-events: none; transition: opacity .2s; }
+.dock a:hover em { opacity: 1; }
+.dock hr { width: 1px; height: 46px; margin: 0 2px; border: 0; background: rgba(255, 255, 255, .5); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ---------- планшет и телефон: окна стопкой ---------- */
+@media (max-width: 899px) {
+  .desk { height: auto; min-height: 0; padding: 44px 14px 18px; }
+  .dstage { position: relative; inset: auto; container-type: normal; display: flex; flex-direction: column; gap: 16px; }
+  .win { position: relative; left: auto !important; top: auto !important; width: 100%; max-width: 560px; animation: none; }
+  .w-sticky { min-width: 0; width: 100%; }
+  .w-note h1 { font-size: 30px; }
+  .icons { position: relative; top: auto; right: auto; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 4px; margin-top: 18px; }
+  .ico { width: 108px; }
+  .dock { position: relative; left: auto; bottom: auto; transform: none; margin: 22px auto 0; gap: 8px; padding: 8px 10px; overflow-x: auto; justify-content: flex-start; }
+  .dock a { width: 52px; height: 52px; }
+  .dock a em { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .dock a, .win { transition: none; animation: none; } }

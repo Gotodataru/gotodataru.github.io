@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Кирилл — UI/UX и продуктовый дизайнер</title>
 <meta name="description" content="Кирилл, UI/UX и продуктовый дизайнер. 3 года 8 месяцев в дизайне: исследование, дизайн-система в Figma, React-приложение в проде. Кейсы fightev и Tenni Wallet.">
+<link rel="canonical" href="https://gotodataru.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gotodataru.github.io/">
 <meta property="og:title" content="Кирилл — UI/UX и продуктовый дизайнер">
@@ -13,41 +14,22 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='5' fill='white'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232F6B47'/%3E%3Ccircle cx='16' cy='16' r='5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/canvas.css">
+<link rel="stylesheet" href="assets/desk.css">
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
-<style>
-.widget { position: absolute; z-index: 2; left: 18px; top: 46px; width: 330px; border-radius: 16px; overflow: hidden; background: rgba(255, 255, 255, .55);
-  -webkit-backdrop-filter: blur(26px) saturate(1.5); backdrop-filter: blur(26px) saturate(1.5); border: 1px solid rgba(255, 255, 255, .6); box-shadow: 0 16px 44px rgba(0, 0, 0, .2); color: #141414; }
-.widget__bar { display: flex; gap: 8px; align-items: center; height: 36px; padding: 0 12px; border-bottom: 1px solid rgba(255, 255, 255, .55); }
-.widget__bar i { width: 12px; height: 12px; border-radius: 50%; display: block; box-shadow: inset 0 0 0 .5px rgba(0, 0, 0, .15); }
-.widget__body { padding: 18px 20px 20px; }
-.widget h1 { font-size: 22px; font-weight: 600; letter-spacing: -.035em; line-height: 1.15; margin-bottom: 8px; }
-.widget p { font-size: 14px; line-height: 1.5; color: #3a3a38; }
-.widget p + p { margin-top: 10px; }
-.widget b { font-weight: 600; color: #111; }
-.widget a { border-bottom: 1px solid rgba(0, 0, 0, .4); }
-@media (max-width: 860px) { .widget { left: 12px; top: 40px; width: calc(100% - 24px); max-width: 330px; } .icons { top: auto; bottom: 94px; right: 8px; } }
-.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc4ff"/><stop offset="1" stop-color="#2f8cf0"/></linearGradient>
-    <linearGradient id="fg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9dcff"/><stop offset="1" stop-color="#56aaf7"/></linearGradient>
-  </defs>
-  <symbol id="folder" viewBox="0 0 56 48"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h23a4 4 0 0 1 4 4v3H4z" fill="url(#fg)"/><rect x="2" y="13" width="52" height="31" rx="4" fill="url(#fg2)"/></symbol>
-  <symbol id="pdf" viewBox="0 0 56 48"><path d="M13 3h22l9 9v31a2 2 0 0 1-2 2H13a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z" fill="#fff"/><path d="M35 3v9h9z" fill="#d9dde3"/><rect x="16" y="28" width="20" height="9" rx="2" fill="#e5483f"/><path d="M17 17h18M17 21h14" stroke="#c5c9d0" stroke-width="2" stroke-linecap="round"/></symbol>
   <symbol id="arr" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="folder" viewBox="0 0 56 48"><defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc4ff"/><stop offset="1" stop-color="#2f8cf0"/></linearGradient><linearGradient id="fg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9dcff"/><stop offset="1" stop-color="#56aaf7"/></linearGradient></defs><path d="M4 8a4 4 0 0 1 4-4h12l5 5h23a4 4 0 0 1 4 4v3H4z" fill="url(#fg)"/><rect x="2" y="13" width="52" height="31" rx="4" fill="url(#fg2)"/></symbol>
 </svg>
 
 <div class="menubar">
   <nav>
-    <span class="mark" aria-hidden="true">✳</span><b><span lang="ru">Кирилл</span><span lang="en">Kirill</span></b>
-    <a href="#about"><span lang="ru">Обо мне</span><span lang="en">About</span></a>
+    <span class="mark" aria-hidden="true"><span lang="ru">К</span><span lang="en">K</span></span><b><span lang="ru">Кирилл</span><span lang="en">Kirill</span></b>
     <a href="#work"><span lang="ru">Работы</span><span lang="en">Work</span></a>
-    <a href="#live"><span lang="ru">В проде</span><span lang="en">Live</span></a>
+    <a href="#about"><span lang="ru">Обо мне</span><span lang="en">About</span></a>
     <a href="#contact"><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
   </nav>
   <div class="sys">
@@ -58,33 +40,47 @@
 
 <main>
 <section class="desk" id="top">
-  <div class="wall" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="e"></i></div>
+  <div class="wall" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i><i class="band"></i></div>
 
-  <aside class="widget" aria-label="О портфолио">
-    <div class="widget__bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
-    <div class="widget__body">
-      <h1><span lang="ru">Кирилл, UI/UX и продуктовый дизайнер</span><span lang="en">Kirill, UI/UX and product designer</span></h1>
-      <p><span lang="ru"><b>3 года 8 месяцев в дизайне.</b> Довожу интерфейсы до работающего продукта: исследование, дизайн-система в Figma, React-приложение в проде.</span><span lang="en"><b>3 years 8 months in design.</b> I take interfaces all the way to a working product: research, a Figma design system, a React app in production.</span></p>
-      <p><span lang="ru">Ищу роль в команде: финтех, B2B, продукты с данными. <a href="#contact">Написать</a></span><span lang="en">Looking for a team role: fintech, B2B, data products. <a href="#contact">Get in touch</a></span></p>
-    </div>
-  </aside>
-  <h1 class="sr">Кирилл, UI/UX и продуктовый дизайнер. Портфолио.</h1>
+  <div class="dstage" id="stage">
+    <article class="win w-note">
+      <div class="win__bar"><i></i><i></i><i></i><b><span lang="ru">О портфолио</span><span lang="en">About this portfolio</span></b></div>
+      <div class="w-note__body">
+        <small><span lang="ru">Открыт к предложениям · финтех, B2B, данные</span><span lang="en">Open to offers · fintech, B2B, data</span></small>
+        <h1><span lang="ru">Кирилл, UI/UX и продуктовый дизайнер</span><span lang="en">Kirill, UI/UX and product designer</span></h1>
+        <p><span lang="ru"><b>3 года 8 месяцев в дизайне.</b> Довожу интерфейсы до работающего продукта: исследование, дизайн-система в Figma, React-приложение в проде.</span><span lang="en"><b>3 years 8 months in design.</b> I take interfaces all the way to a working product: research, a Figma design system, a React app in production.</span></p>
+        <a class="w-note__link" href="https://t.me/gotodata"><span lang="ru">Написать в Telegram</span><span lang="en">Message on Telegram</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+      </div>
+    </article>
 
-  <nav class="icons" aria-label="Рабочий стол">
-    <a class="ico" href="fightev-case/"><svg aria-hidden="true"><use href="#folder"/></svg>fightev</a>
-    <a class="ico" href="resume_designer_ru.pdf" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pdf"/></svg><span lang="ru">Резюме.pdf</span><span lang="en">Resume.pdf</span></a>
-    <a class="ico" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/"><svg aria-hidden="true"><use href="#folder"/></svg>Tenni Wallet</a>
-    <a class="ico" href="#about"><svg aria-hidden="true"><use href="#folder"/></svg><span lang="ru">Обо мне</span><span lang="en">About me</span></a>
-    <a class="ico" href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV"><svg aria-hidden="true"><use href="#folder"/></svg><span lang="ru">Дизайн-системы</span><span lang="en">Design Systems</span></a>
-    <a class="ico" href="#work"><svg aria-hidden="true"><use href="#folder"/></svg><span lang="ru">Все работы</span><span lang="en">All work</span></a>
-    <a class="ico" href="#live"><svg aria-hidden="true"><use href="#folder"/></svg><span lang="ru">В проде</span><span lang="en">Live</span></a>
-    <a class="ico" href="#contact"><svg aria-hidden="true"><use href="#folder"/></svg><span lang="ru">Контакты</span><span lang="en">Contact</span></a>
+    <article class="win w-app">
+      <div class="win__bar"><i></i><i></i><i></i><b>fightev</b></div>
+      <a class="win__shot" href="fightev-case/"><img src="assets/fightev.webp" alt="fightev: приложение со статистикой UFC. Открыть кейс" width="1600" height="974" fetchpriority="high"><span class="open" aria-hidden="true"><span lang="ru">Открыть кейс →</span><span lang="en">Open case →</span></span></a>
+    </article>
+
+    <article class="win w-tenni">
+      <div class="win__bar"><i></i><i></i><i></i><b>Tenni Wallet</b></div>
+      <a class="win__shot" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/"><img src="assets/tenni.webp" alt="Tenni Wallet: оплата в три шага. Открыть прототип" width="1600" height="974" loading="lazy"><span class="open" aria-hidden="true"><span lang="ru">Открыть прототип →</span><span lang="en">Open prototype →</span></span></a>
+    </article>
+
+    <article class="win w-sticky">
+      <div class="win__bar" aria-hidden="true"></div>
+      <div class="w-sticky__body">
+        <div><b><span lang="ru">3 г. 8 мес.</span><span lang="en">3 y. 8 mo.</span></b><span><span lang="ru">в дизайне</span><span lang="en">in design</span></span></div>
+        <div><b><span lang="ru">30 экранов</span><span lang="en">30 screens</span></b><span><span lang="ru">и 18 компонентов в fightev</span><span lang="en">and 18 components in fightev</span></span></div>
+        <div><b>6 + 300+</b><span><span lang="ru">тест макетов и опрос сообщества</span><span lang="en">mockup test and community survey</span></span></div>
+      </div>
+    </article>
+  </div>
+
+  <nav class="icons" aria-label="Файлы на рабочем столе">
+    <a class="ico ico--page" href="resume_designer_ru.pdf" target="_blank" rel="noopener"><span class="thumb"><img src="assets/resume-thumb.webp" alt="" width="420" height="635"></span><span lang="ru">Резюме.pdf</span><span lang="en">Resume.pdf</span></a>
+    <a class="ico" href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV"><span class="thumb"><img src="assets/ds-fightev.webp" alt="" width="640" height="539"></span><span lang="ru">Дизайн-система fightev</span><span lang="en">fightev design system</span></a>
+    <a class="ico" href="https://www.figma.com/design/9VfEHWlaHH0LBl94VlaIQ1/Tenni-Wallet-V2"><span class="thumb"><img src="assets/ds-tenni.webp" alt="" width="640" height="525"></span><span lang="ru">Дизайн-система Tenni</span><span lang="en">Tenni design system</span></a>
   </nav>
 
-  <a class="polaroid" href="fightev-case/"><span><img src="assets/fightev.webp" alt=""></span>fightev_app.png</a>
-
   <nav class="dock" aria-label="Док">
-    <a href="fightev-case/"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0b0b0c"/><rect width="64" height="64" rx="15" fill="#18c964" opacity=".16"/><text x="32" y="45" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="40" fill="#fff">f</text><circle cx="46" cy="44" r="4" fill="#18c964"/></svg><em>fightev</em></a>
+    <a href="fightev-case/"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#0b0b0c"/><rect width="64" height="64" rx="15" fill="#18c964" opacity=".16"/><text x="32" y="45" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="40" fill="#fff">f</text><circle cx="46" cy="44" r="4" fill="#18c964"/></svg><em><span lang="ru">Кейс fightev</span><span lang="en">fightev case</span></em></a>
     <a href="https://gotodataru.github.io/Tenni_Wallet_UIUX/"><svg viewBox="0 0 64 64"><defs><linearGradient id="dt" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8f7bff"/><stop offset="1" stop-color="#3a2fb8"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#dt)"/><text x="32" y="45" text-anchor="middle" font-family="Inter,sans-serif" font-weight="700" font-size="38" fill="#fff">T</text></svg><em>Tenni Wallet</em></a>
     <a href="https://fightev.com/" target="_blank" rel="noopener"><svg viewBox="0 0 64 64"><defs><linearGradient id="dg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4ee08a"/><stop offset="1" stop-color="#0f8f4a"/></linearGradient></defs><rect width="64" height="64" rx="15" fill="url(#dg)"/><circle cx="32" cy="32" r="15" fill="none" stroke="#fff" stroke-width="3"/><path d="M17 32h30M32 17c-8 8-8 22 0 30M32 17c8 8 8 22 0 30" fill="none" stroke="#fff" stroke-width="3"/></svg><em><span lang="ru">Сайт fightev</span><span lang="en">fightev live</span></em></a>
     <a href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#1e1e1e"/><circle cx="26" cy="22" r="8" fill="#f24e1e"/><circle cx="38" cy="22" r="8" fill="#ff7262"/><circle cx="26" cy="38" r="8" fill="#a259ff"/><circle cx="38" cy="38" r="8" fill="#1abcfe"/></svg><em>Figma</em></a>
@@ -96,119 +92,113 @@
   </nav>
 </section>
 
+<section class="works" id="work">
+  <div class="wrap">
+    <div class="sechead">
+      <h2><span lang="ru">Работы</span><span lang="en">Work</span></h2>
+      <p><span lang="ru">Шесть кадров из двух проектов: приложение в проде и концепт кошелька.</span><span lang="en">Six frames from two projects: a live app and a wallet concept.</span></p>
+    </div>
+    <div class="rowhead" aria-hidden="true"><span>№</span><span></span><span><span lang="ru">Проект</span><span lang="en">Project</span></span><span><span lang="ru">О чём</span><span lang="en">What it is</span></span><span><span lang="ru">Тип</span><span lang="en">Type</span></span><span></span></div>
+    <ol class="rows">
+      <li class="reveal"><a class="row" href="fightev-case/">
+        <span class="n">01</span><span class="th"><img src="assets/fightev.webp" alt="" loading="lazy"></span>
+        <span class="t">fightev</span>
+        <span class="tags"><span lang="ru">Приложение со статистикой UFC · Десктоп · В проде</span><span lang="en">UFC stats app · Desktop · Live</span></span>
+        <span class="kind"><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span>
+        <svg class="go" aria-hidden="true"><use href="#arr"/></svg></a></li>
+      <li class="reveal"><a class="row" href="fightev-case/#app">
+        <span class="n">02</span><span class="th"><img src="fightev-case/img/m-profile.webp" alt="" loading="lazy"></span>
+        <span class="t"><span lang="ru">fightev на телефоне</span><span lang="en">fightev on a phone</span></span>
+        <span class="tags"><span lang="ru">Мобильное · Данные · Адаптив</span><span lang="en">Mobile · Data · Responsive</span></span>
+        <span class="kind"><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span>
+        <svg class="go" aria-hidden="true"><use href="#arr"/></svg></a></li>
+      <li class="reveal"><a class="row" href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV">
+        <span class="n">03</span><span class="th"><svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="100" fill="#14201a"/><rect x="14" y="14" width="60" height="22" rx="6" fill="#18c964"/><rect x="83" y="15" width="63" height="20" rx="5" fill="none" stroke="#18c964" stroke-width="2"/><circle cx="26" cy="62" r="10" fill="#fff" opacity=".9"/><rect x="44" y="52" width="102" height="8" rx="4" fill="#fff" opacity=".7"/><rect x="44" y="66" width="70" height="8" rx="4" fill="#fff" opacity=".35"/><rect x="14" y="84" width="132" height="4" rx="2" fill="#18c964" opacity=".5"/></svg></span>
+        <span class="t"><span lang="ru">Дизайн-система fightev</span><span lang="en">fightev Design System</span></span>
+        <span class="tags"><span lang="ru">Дизайн-системы · 18 компонентов · 30 экранов · 2 темы</span><span lang="en">Design Systems · 18 components · 30 screens · 2 themes</span></span>
+        <span class="kind"><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span>
+        <svg class="go" aria-hidden="true"><use href="#arr"/></svg></a></li>
+      <li class="reveal"><a class="row" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/">
+        <span class="n">04</span><span class="th"><img src="assets/tenni.webp" alt="" loading="lazy"></span>
+        <span class="t">Tenni Wallet</span>
+        <span class="tags"><span lang="ru">Финтех · Мобильное · Оплата криптой</span><span lang="en">Fintech · Mobile · Paying with crypto</span></span>
+        <span class="kind"><span lang="ru">Концепт</span><span lang="en">Concept</span></span>
+        <svg class="go" aria-hidden="true"><use href="#arr"/></svg></a></li>
+      <li class="reveal"><a class="row" href="https://www.figma.com/design/9VfEHWlaHH0LBl94VlaIQ1/Tenni-Wallet-V2">
+        <span class="n">05</span><span class="th"><svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><rect width="160" height="100" fill="#2b2470"/><rect x="14" y="14" width="60" height="22" rx="6" fill="#8f7bff"/><rect x="83" y="15" width="63" height="20" rx="5" fill="none" stroke="#8f7bff" stroke-width="2"/><circle cx="26" cy="62" r="10" fill="#fff" opacity=".9"/><rect x="44" y="52" width="102" height="8" rx="4" fill="#fff" opacity=".7"/><rect x="44" y="66" width="70" height="8" rx="4" fill="#fff" opacity=".35"/><rect x="14" y="84" width="132" height="4" rx="2" fill="#8f7bff" opacity=".6"/></svg></span>
+        <span class="t"><span lang="ru">Дизайн-система Tenni</span><span lang="en">Tenni Design System</span></span>
+        <span class="tags"><span lang="ru">Дизайн-системы · 39 компонентов · 40 экранов</span><span lang="en">Design Systems · 39 components · 40 screens</span></span>
+        <span class="kind"><span lang="ru">Концепт</span><span lang="en">Concept</span></span>
+        <svg class="go" aria-hidden="true"><use href="#arr"/></svg></a></li>
+      <li class="reveal"><a class="row" href="fightev-case/#app">
+        <span class="n">06</span><span class="th"><img src="fightev-case/img/accuracy.webp" alt="" loading="lazy"></span>
+        <span class="t"><span lang="ru">Точность модели</span><span lang="en">Model accuracy</span></span>
+        <span class="tags"><span lang="ru">Данные · Десктоп · Доверие к цифрам</span><span lang="en">Data · Desktop · Trust in numbers</span></span>
+        <span class="kind"><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span>
+        <svg class="go" aria-hidden="true"><use href="#arr"/></svg></a></li>
+    </ol>
+  </div>
+</section>
+
 <section class="about" id="about">
   <div class="wrap">
-    <p class="eyebrow"><span lang="ru">Обо мне</span><span lang="en">About</span></p>
     <div class="about__grid">
-      <div>
+      <div class="about__l">
+        <p class="eyebrow"><span lang="ru">Обо мне</span><span lang="en">About</span></p>
         <h2><span lang="ru">Привет, я Кирилл.</span><span lang="en">Hi, I’m Kirill.</span></h2>
-        <p class="about__lead"><span lang="ru">Проектирую интерфейсы и довожу их до работающего продукта. Люблю делать сложные данные понятными: вероятности, рейтинги, таблицы.</span><span lang="en">I design interfaces and take them all the way to a working product. I like making complex data clear: probabilities, ratings, tables.</span></p>
-        <p class="about__lead"><span lang="ru"><strong style="color:#111;font-weight:500">Стаж в дизайне: 3 года 8 месяцев</strong> (с марта 2023). До этого 10 лет продавал сложные решения в B2B и строил стартап, поэтому смотрю на интерфейс как на часть бизнеса.</span><span lang="en"><strong style="color:#111;font-weight:500">Design experience: 3 years 8 months</strong> (since March 2023). Before that, 10 years selling complex solutions in B2B and building a startup, so I see an interface as part of the business.</span></p>
-      </div>
-      <div>
-        <ul class="xp">
-          <li class="reveal"><div class="when"><span lang="ru">Фев 2024 — наст. время<br>Удалённо</span><span lang="en">Feb 2024 – now<br>Remote</span></div>
-            <div><h3><span lang="ru">Дизайнер и разработчик продукта</span><span lang="en">Product designer and developer</span></h3><div class="org">fightev</div>
-            <p><span lang="ru">Приложение со статистикой UFC: тест макетов на 6 людях и опрос 300+, дизайн-система (18 компонентов, 30 экранов), React, прод.</span><span lang="en">A UFC stats app: a mockup test with 6 people and a 300+ survey, a design system (18 components, 30 screens), React, production.</span></p></div></li>
-          <li class="reveal"><div class="when"><span lang="ru">Мар 2023 — Фев 2024<br>Удалённо</span><span lang="en">Mar 2023 – Feb 2024<br>Remote</span></div>
-            <div><h3><span lang="ru">Веб-дизайнер</span><span lang="en">Web designer</span></h3><div class="org">Mawe Studio</div>
-            <p><span lang="ru">8–9 сайтов и лендингов для клиентов агентства за год: структура, макеты в Figma, фирменный стиль.</span><span lang="en">8–9 websites and landing pages for the agency’s clients in a year: structure, Figma layouts, brand identity.</span></p></div></li>
-          <li class="reveal"><div class="when"><span lang="ru">2026<br>Личный проект</span><span lang="en">2026<br>Personal project</span></div>
-            <div><h3><span lang="ru">Продуктовый дизайнер</span><span lang="en">Product designer</span></h3><div class="org">Tenni Wallet</div>
-            <p><span lang="ru">Криптокошелёк с картой: 39 компонентов, 40 экранов в двух темах, 7 сценариев, прототип в коде.</span><span lang="en">A crypto wallet with a card: 39 components, 40 screens in two themes, 7 flows, a prototype in code.</span></p></div></li>
-        </ul>
-        <div class="about__links">
+        <p class="lead"><span lang="ru">Проектирую интерфейсы и довожу их до работающего продукта. Люблю делать сложные данные понятными: вероятности, рейтинги, таблицы.</span><span lang="en">I design interfaces and take them all the way to a working product. I like making complex data clear: probabilities, ratings, tables.</span></p>
+        <p class="lead"><span lang="ru"><strong>Стаж в дизайне: 3 года 8 месяцев</strong> (с марта 2023). До этого 10 лет продавал сложные решения в B2B и строил стартап, поэтому смотрю на интерфейс как на часть бизнеса.</span><span lang="en"><strong>Design experience: 3 years 8 months</strong> (since March 2023). Before that, 10 years selling complex solutions in B2B and building a startup, so I see an interface as part of the business.</span></p>
+        <div class="links">
           <a class="ulink" href="resume_designer_ru.pdf" target="_blank" rel="noopener"><span lang="ru">Резюме (PDF)</span><span lang="en">View full resume (PDF, RU)</span></a>
           <a class="ulink" href="https://t.me/gotodata"><span lang="ru">Написать в Telegram</span><span lang="en">Message on Telegram</span></a>
         </div>
+        <dl class="props">
+          <h3><span lang="ru">Свойства</span><span lang="en">Properties</span></h3>
+          <div><dt><span lang="ru">Роль</span><span lang="en">Role</span></dt><dd><span lang="ru">UI/UX и продуктовый дизайнер</span><span lang="en">UI/UX and product designer</span></dd></div>
+          <div><dt><span lang="ru">Фокус</span><span lang="en">Focus</span></dt><dd><span lang="ru">Финтех, B2B, продукты с данными</span><span lang="en">Fintech, B2B, data products</span></dd></div>
+          <div><dt><span lang="ru">Инструменты</span><span lang="en">Tools</span></dt><dd>Figma, React</dd></div>
+          <div><dt><span lang="ru">Формат</span><span lang="en">Format</span></dt><dd><span lang="ru">Удалённо</span><span lang="en">Remote</span></dd></div>
+          <div><dt><span lang="ru">Связь</span><span lang="en">Contact</span></dt><dd><a href="https://t.me/gotodata">@gotodata</a></dd></div>
+        </dl>
       </div>
+      <ol class="hist">
+        <li class="now reveal">
+          <div class="when"><span lang="ru">Фев 2024 — наст. время · Удалённо</span><span lang="en">Feb 2024 – now · Remote</span><span class="cur"><span lang="ru">Текущая версия</span><span lang="en">Current version</span></span></div>
+          <h3><span lang="ru">Дизайнер и разработчик продукта</span><span lang="en">Product designer and developer</span></h3><div class="org">fightev</div>
+          <p><span lang="ru">Приложение со статистикой UFC: тест макетов на 6 людях и опрос 300+, дизайн-система (18 компонентов, 30 экранов), React, прод.</span><span lang="en">A UFC stats app: a mockup test with 6 people and a 300+ survey, a design system (18 components, 30 screens), React, production.</span></p>
+          <a class="go" href="fightev-case/"><span lang="ru">Смотреть кейс</span><span lang="en">View the case</span><svg aria-hidden="true"><use href="#arr"/></svg></a></li>
+        <li class="reveal">
+          <div class="when"><span lang="ru">2026 · Личный проект</span><span lang="en">2026 · Personal project</span></div>
+          <h3><span lang="ru">Продуктовый дизайнер</span><span lang="en">Product designer</span></h3><div class="org">Tenni Wallet</div>
+          <p><span lang="ru">Криптокошелёк с картой: 39 компонентов, 40 экранов в двух темах, 7 сценариев, прототип в коде.</span><span lang="en">A crypto wallet with a card: 39 components, 40 screens in two themes, 7 flows, a prototype in code.</span></p>
+          <a class="go" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/"><span lang="ru">Открыть прототип</span><span lang="en">Open the prototype</span><svg aria-hidden="true"><use href="#arr"/></svg></a></li>
+        <li class="reveal">
+          <div class="when"><span lang="ru">Мар 2023 — Фев 2024 · Удалённо</span><span lang="en">Mar 2023 – Feb 2024 · Remote</span></div>
+          <h3><span lang="ru">Веб-дизайнер</span><span lang="en">Web designer</span></h3><div class="org">Mawe Studio</div>
+          <p><span lang="ru">8–9 сайтов и лендингов для клиентов агентства за год: структура, макеты в Figma, фирменный стиль.</span><span lang="en">8–9 websites and landing pages for the agency’s clients in a year: structure, Figma layouts, brand identity.</span></p></li>
+      </ol>
     </div>
-  </div>
-</section>
-
-<section class="works" id="work">
-  <div class="wrap">
-    <div class="works__head">
-      <h2 class="big"><span lang="ru">Работы</span><span lang="en">Selected Work</span><sup>(6)</sup></h2>
-      <div class="chips" role="group" aria-label="Фильтр">
-        <button class="chip" data-f="all" aria-pressed="true"><span lang="ru">Все</span><span lang="en">All</span><sup>6</sup></button>
-        <button class="chip" data-f="desktop" aria-pressed="false"><span lang="ru">Десктоп</span><span lang="en">Desktop</span><sup>2</sup></button>
-        <button class="chip" data-f="mobile" aria-pressed="false"><span lang="ru">Мобильное</span><span lang="en">Mobile</span><sup>2</sup></button>
-        <button class="chip" data-f="data" aria-pressed="false"><span lang="ru">Данные</span><span lang="en">Data</span><sup>3</sup></button>
-        <button class="chip" data-f="ds" aria-pressed="false"><span lang="ru">Дизайн-системы</span><span lang="en">Design Systems</span><sup>2</sup></button>
-      </div>
-    </div>
-
-    <div class="grid" id="grid">
-      <a class="card reveal" data-tags="desktop data" href="fightev-case/">
-        <div class="card__img" style="--c1:#2fd27a;--c2:#0b6b3a"><i class="b1"></i><i class="b2"></i><i class="b3"></i><h3>fightev<br>app</h3></div>
-        <div class="card__meta">fightev <span><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span></div>
-        <div class="card__tags"><span lang="ru">Приложение со статистикой UFC · Десктоп · В проде</span><span lang="en">UFC stats app · Desktop · Live</span></div></a>
-      <a class="card reveal" data-tags="mobile data" href="fightev-case/#app">
-        <div class="card__img" style="--c1:#8a96ff;--c2:#2a3aa0"><i class="b1"></i><i class="b2"></i><i class="b3"></i><h3>fightev<br>mobile</h3></div>
-        <div class="card__meta"><b style="font-weight:500"><span lang="ru">fightev на телефоне</span><span lang="en">fightev on a phone</span></b> <span><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span></div>
-        <div class="card__tags"><span lang="ru">Мобильное · Данные · Адаптив</span><span lang="en">Mobile · Data · Responsive</span></div></a>
-      <a class="card reveal" data-tags="ds" href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV">
-        <div class="card__img" style="--c1:#c58cff;--c2:#5a2d99"><i class="b1"></i><i class="b2"></i><i class="b3"></i><h3>fightev<br>system</h3></div>
-        <div class="card__meta"><b style="font-weight:500"><span lang="ru">Дизайн-система fightev</span><span lang="en">fightev Design System</span></b> <span><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span></div>
-        <div class="card__tags"><span lang="ru">Дизайн-системы · 18 компонентов · 30 экранов · 2 темы</span><span lang="en">Design Systems · 18 components · 30 screens · 2 themes</span></div></a>
-      <a class="card reveal" data-tags="mobile" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/">
-        <div class="card__img" style="--c1:#f2a65e;--c2:#a8451f"><i class="b1"></i><i class="b2"></i><i class="b3"></i><h3>Tenni<br>Wallet</h3></div>
-        <div class="card__meta">Tenni Wallet <span><span lang="ru">Концепт</span><span lang="en">Concept</span></span></div>
-        <div class="card__tags"><span lang="ru">Финтех · Мобильное · Оплата криптой</span><span lang="en">Fintech · Mobile · Paying with crypto</span></div></a>
-      <a class="card reveal" data-tags="ds" href="https://www.figma.com/design/9VfEHWlaHH0LBl94VlaIQ1/Tenni-Wallet-V2">
-        <div class="card__img" style="--c1:#5ad4ea;--c2:#1a6a8a"><i class="b1"></i><i class="b2"></i><i class="b3"></i><h3>Tenni<br>system</h3></div>
-        <div class="card__meta"><b style="font-weight:500"><span lang="ru">Дизайн-система Tenni</span><span lang="en">Tenni Design System</span></b> <span><span lang="ru">Концепт</span><span lang="en">Concept</span></span></div>
-        <div class="card__tags"><span lang="ru">Дизайн-системы · 39 компонентов · 40 экранов</span><span lang="en">Design Systems · 39 components · 40 screens</span></div></a>
-      <a class="card reveal" data-tags="desktop data" href="fightev-case/#app">
-        <div class="card__img" style="--c1:#ec6e90;--c2:#7a1f3f"><i class="b1"></i><i class="b2"></i><i class="b3"></i><h3>fightev<br>accuracy</h3></div>
-        <div class="card__meta"><b style="font-weight:500"><span lang="ru">Точность модели</span><span lang="en">Model accuracy</span></b> <span><span lang="ru">Свой продукт</span><span lang="en">Own product</span></span></div>
-        <div class="card__tags"><span lang="ru">Данные · Десктоп · Доверие к цифрам</span><span lang="en">Data · Desktop · Trust in numbers</span></div></a>
-    </div>
-  </div>
-</section>
-
-<section class="tiles" id="live">
-  <div class="wrap">
-    <div class="tiles__head">
-      <h2 class="big"><span lang="ru">В проде</span><span lang="en">Live</span><sup>(03)</sup></h2>
-      <p><span lang="ru">Оба кейса работают: их можно открыть и потрогать. За каждым — короткий кейс с решениями и цифрами.</span><span lang="en">Both cases actually work: open them and click around. Each has a short case study behind it.</span></p>
-    </div>
-    <div class="tiles__grid">
-      <a class="tile reveal" href="fightev-case/">
-        <div class="tile__bg" style="background:#2A2824"><div class="laptop"><div class="scr"><img src="fightev-case/img/profile.webp" alt="fightev: профиль бойца" loading="lazy"></div><div class="base"></div></div></div>
-        <figcaption><b>//</b><span lang="ru">fightev: профиль бойца</span><span lang="en">fightev: a fighter profile</span><span><span lang="ru">Продукт в проде · кейс · 2026</span><span lang="en">Live product · case study · 2026</span></span></figcaption></a>
-      <a class="tile reveal" href="fightev-case/#app">
-        <div class="tile__bg" style="background:#DAD2C6"><div class="phones2"><div class="ph"><img src="fightev-case/img/m-profile.webp" alt="fightev на телефоне" loading="lazy"></div><div class="ph"><img src="fightev-case/img/m-accuracy.webp" alt="Точность на телефоне" loading="lazy"></div></div></div>
-        <figcaption><b>//</b><span lang="ru">fightev: на телефоне</span><span lang="en">fightev: on a phone</span><span><span lang="ru">Адаптив · кейс · 2026</span><span lang="en">Responsive · case study · 2026</span></span></figcaption></a>
-      <a class="tile reveal" href="https://gotodataru.github.io/Tenni_Wallet_UIUX/">
-        <div class="tile__bg" style="background:#C6CDC1"><div class="monitor"><div class="scr"><img src="assets/tenni.webp" alt="Tenni Wallet: оплата в три шага" loading="lazy"></div><div class="neck"></div><div class="foot"></div></div></div>
-        <figcaption><b>//</b><span lang="ru">Tenni Wallet: оплата в три шага</span><span lang="en">Tenni Wallet: paying in three steps</span><span><span lang="ru">Концепт · прототип в коде · 2026</span><span lang="en">Concept · prototype in code · 2026</span></span></figcaption></a>
-    </div>
-    <div class="center"><a class="pill" href="fightev-case/"><span lang="ru">Открыть кейс fightev</span><span lang="en">Open the fightev case</span><svg width="14" height="14" aria-hidden="true"><use href="#arr"/></svg></a></div>
   </div>
 </section>
 </main>
 
 <footer class="contact" id="contact">
   <div class="wrap">
-    <p class="eyebrow"><span lang="ru">Контакты</span><span lang="en">Contact</span></p>
+    <p class="eyebrow"><span lang="ru">Контакты · открыт к предложениям</span><span lang="en">Contact · open to offers</span></p>
     <div class="contact__row">
       <h2><span lang="ru">Делаю сложные данные понятными.</span><span lang="en">Making complex data clear.</span></h2>
-      <a class="mail" href="https://t.me/gotodata">Telegram @gotodata <svg width="14" height="14" aria-hidden="true"><use href="#arr"/></svg></a>
+      <a class="mail" href="https://t.me/gotodata">Telegram @gotodata <svg aria-hidden="true"><use href="#arr"/></svg></a>
     </div>
     <div class="foot">
-      <div><b><span lang="ru">Кирилл</span><span lang="en">Kirill</span>°</b><small><span lang="ru">UI/UX и продуктовый дизайнер</span><span lang="en">UI/UX and product designer</span></small></div>
-      <div class="conn"><small><span lang="ru">Связь</span><span lang="en">Connect</span></small>
-        <div>
-          <a href="https://t.me/gotodata">Telegram <svg width="12" height="12" aria-hidden="true"><use href="#arr"/></svg></a>
-          <a href="https://github.com/Gotodataru">GitHub <svg width="12" height="12" aria-hidden="true"><use href="#arr"/></svg></a>
-          <a href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV">Figma <svg width="12" height="12" aria-hidden="true"><use href="#arr"/></svg></a>
-          <a href="resume_designer_ru.pdf" target="_blank" rel="noopener"><span lang="ru">Резюме (PDF)</span><span lang="en">Resume (PDF)</span> <svg width="12" height="12" aria-hidden="true"><use href="#arr"/></svg></a>
-        </div>
+      <div><b><span lang="ru">Кирилл</span><span lang="en">Kirill</span></b><small><span lang="ru">UI/UX и продуктовый дизайнер</span><span lang="en">UI/UX and product designer</span></small></div>
+      <div class="conn">
+        <a href="https://t.me/gotodata">Telegram <svg aria-hidden="true"><use href="#arr"/></svg></a>
+        <a href="https://github.com/Gotodataru">GitHub <svg aria-hidden="true"><use href="#arr"/></svg></a>
+        <a href="https://www.figma.com/design/bIwVloPsRonv9hVuh1oFAp/FightEV">Figma <svg aria-hidden="true"><use href="#arr"/></svg></a>
+        <a href="resume_designer_ru.pdf" target="_blank" rel="noopener"><span lang="ru">Резюме (PDF)</span><span lang="en">Resume (PDF)</span> <svg aria-hidden="true"><use href="#arr"/></svg></a>
       </div>
     </div>
-    <div class="legal"><span>© 2026 <span lang="ru">Кирилл</span><span lang="en">Kirill</span></span><a href="#top"><span lang="ru">Наверх</span><span lang="en">Back to top</span> ↑</a></div>
+    <div class="legal"><span>© 2026 <span lang="ru">Кирилл</span><span lang="en">Kirill</span></span><span></span><a href="#top"><span lang="ru">Наверх</span><span lang="en">Back to top</span> ↑</a></div>
   </div>
 </footer>
 
@@ -220,8 +210,8 @@
   var lang = new URLSearchParams(location.search).get('lang') || get('lang') || 'ru';
   var langBtn = document.getElementById('lang'), clock = document.getElementById('clock');
   function tick() {
-    var d = new Date();
-    try { clock.textContent = d.toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-GB', { weekday: 'short', day: 'numeric', month: 'short' }).replace(',', '') + '  ' + d.toLocaleTimeString(lang === 'ru' ? 'ru-RU' : 'en-GB', { hour: '2-digit', minute: '2-digit' }); } catch (e) {}
+    var d = new Date(), loc = lang === 'ru' ? 'ru-RU' : 'en-GB';
+    try { clock.textContent = d.toLocaleDateString(loc, { weekday: 'short', day: 'numeric', month: 'short' }).replace(',', '') + '  ' + d.toLocaleTimeString(loc, { hour: '2-digit', minute: '2-digit' }); } catch (e) {}
   }
   function apply(l) {
     lang = l; root.dataset.lang = l; root.lang = l; langBtn.textContent = l === 'ru' ? 'EN' : 'RU';
@@ -230,14 +220,31 @@
   apply(lang); setInterval(tick, 20000);
   langBtn.addEventListener('click', function () { apply(lang === 'ru' ? 'en' : 'ru'); set('lang', lang); });
 
-  var chips = document.querySelectorAll('.chip'), cards = document.querySelectorAll('.card');
-  chips.forEach(function (c) {
-    c.addEventListener('click', function () {
-      var f = c.dataset.f;
-      chips.forEach(function (x) { x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
-      cards.forEach(function (card) { var on = f === 'all' || card.dataset.tags.split(' ').indexOf(f) > -1; card.hidden = !on; if (on) card.classList.add('is-in'); });
+  /* окна на столе: тянутся за заголовок, клик выводит окно на передний план */
+  var stage = document.getElementById('stage'), wide = window.matchMedia('(min-width: 900px)'), z = 10;
+  document.querySelectorAll('.win').forEach(function (w) {
+    var bar = w.querySelector('.win__bar');
+    w.addEventListener('pointerdown', function () { w.style.zIndex = ++z; });
+    bar.addEventListener('pointerdown', function (e) {
+      if (!wide.matches || e.button !== 0) return;
+      var st = stage.getBoundingClientRect(), r = w.getBoundingClientRect(), dx = e.clientX - r.left, dy = e.clientY - r.top;
+      bar.setPointerCapture(e.pointerId); w.classList.add('is-drag');
+      function move(ev) {
+        var x = ev.clientX - dx - st.left, y = ev.clientY - dy - st.top;
+        x = Math.max(-r.width * .6, Math.min(st.width - r.width * .4, x)); y = Math.max(-8, Math.min(st.height - 40, y));
+        w.style.left = x + 'px'; w.style.top = y + 'px';
+      }
+      function up() { bar.removeEventListener('pointermove', move); bar.removeEventListener('pointerup', up); bar.removeEventListener('pointercancel', up); w.classList.remove('is-drag'); }
+      bar.addEventListener('pointermove', move); bar.addEventListener('pointerup', up); bar.addEventListener('pointercancel', up);
     });
   });
+
+  /* строка меню подсвечивает текущий раздел */
+  var tabs = {}; document.querySelectorAll('.menubar nav a').forEach(function (a) { tabs[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function (es) { es.forEach(function (e) { var t = tabs[e.target.id]; if (t) t.classList.toggle('is-active', e.isIntersecting); }); }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(tabs).forEach(function (id) { var el = document.getElementById(id); if (el) so.observe(el); });
+  }
 
   var items = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
