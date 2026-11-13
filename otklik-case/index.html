@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Отклик — кейс | Кирилл</title>
+<meta name="description" content="Кейс «Отклик»: Telegram-бот, Mini App и веб, чтобы не терять ответы работодателей. Исследование, дизайн-система, работающий продукт и честная проверка спроса.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gotodataru.github.io/otklik-case/">
+<meta property="og:title" content="Отклик — кейс: трекер поиска работы в Telegram">
+<meta property="og:description" content="Mini App и веб, две темы, дизайн-система, работающий бот. И вывод, который пришлось принять по данным.">
+<meta property="og:image" content="https://gotodataru.github.io/otklik-case/img/cover.webp">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Ccircle cx='16' cy='16' r='5' fill='white'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="../assets/site.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="arr" viewBox="0 0 16 16"><path d="M4.5 11.5l7-7M5.5 4.5h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+<header class="ctop"><div class="wrap">
+  <a href="../">← <span lang="ru">Кирилл</span><span lang="en">Kirill</span></a>
+  <nav><a href="../#work"><span lang="ru">Все работы</span><span lang="en">All work</span></a><button id="lang" type="button" aria-label="Switch language / Сменить язык">EN</button></nav>
+</div></header>
+<main class="wrap">
+  <section class="chero">
+    <p class="eyebrow"><span lang="ru">Кейс · Отклик</span><span lang="en">Case study · Otklik</span></p>
+    <h1><span lang="ru">Трекер поиска работы, который говорит, <em>чей сейчас ход</em></span><span lang="en">A job-search tracker that tells you <em>whose move it is</em></span></h1>
+    <p class="chero__lead"><span lang="ru"><strong>Свой продукт от идеи до работающего бота:</strong> исследование, дизайн-система, Telegram Mini App и веб в&nbsp;двух темах. И&nbsp;проверка спроса, которую я&nbsp;не&nbsp;стал подгонять под желаемый ответ.</span><span lang="en"><strong>My own product from idea to a working bot:</strong> research, a design system, a Telegram Mini App and a web app in two themes. And a demand check I did not bend toward the answer I wanted.</span></p>
+  </section>
+  <dl class="meta">
+    <div><dt><span lang="ru">Роль</span><span lang="en">Role</span></dt><dd><span lang="ru">Продукт, исследование, дизайн, фронтенд</span><span lang="en">Product, research, design, front end</span></dd></div>
+    <div><dt><span lang="ru">Период</span><span lang="en">When</span></dt><dd><span lang="ru">Октябрь — ноябрь 2026</span><span lang="en">October — November 2026</span></dd></div>
+    <div><dt><span lang="ru">Стек</span><span lang="en">Stack</span></dt><dd>Figma, Telegram Bot API, Mini App, JS, Python, SQLite</dd></div>
+    <div><dt><span lang="ru">Масштаб</span><span lang="en">Scale</span></dt><dd><span lang="ru">25 экранов Mini App × 2 темы · веб 1440 · 950 автотестов</span><span lang="en">25 Mini App screens × 2 themes · web 1440 · 950 automated tests</span></dd></div>
+  </dl>
+  <a class="cover" href="img/cover.webp" target="_blank" rel="noopener"><img src="img/cover.webp" width="1600" height="1000" alt="Отклик: экран «Сегодня» с откликами, где ход за человеком"></a>
+  <p class="note"><span lang="ru">На всех экранах — выдуманные компании и данные. Реальные отклики в кейс не попали.</span><span lang="en">All screens show made-up companies and data. No real applications are in this case.</span></p>
+
+  <section class="sec">
+    <div class="sec__head"><h2><span lang="ru">Задача и&nbsp;итог</span><span lang="en">Problem and result</span></h2><sup>01</sup></div>
+    <ul class="facts">
+      <li><b><span lang="ru">Задача</span><span lang="en">Problem</span></b><span><span lang="ru">Ищу работу сам: за&nbsp;месяц больше 150 откликов на&nbsp;hh, в&nbsp;Telegram-каналах и&nbsp;напрямую. Ответы приходят в&nbsp;почту, в&nbsp;чат площадки, в&nbsp;личку&nbsp;— и&nbsp;теряются. <strong>Пропущенное приглашение стоит дороже любого отказа.</strong></span><span lang="en">I am job hunting myself: over 150 applications in a month on hh, in Telegram channels and directly. Replies land in email, the job board chat, DMs&nbsp;— and get lost. <strong>A missed invite costs more than any rejection.</strong></span></span></li>
+      <li><b><span lang="ru">Решение</span><span lang="en">Solution</span></b><span><span lang="ru">Бот принимает вакансию одним «Поделиться» из&nbsp;приложения hh, сам ставит сроки и&nbsp;отмечает тишину. Главный экран отвечает на&nbsp;один вопрос: <strong>что сделать мне, а&nbsp;чего ждать от&nbsp;них.</strong></span><span lang="en">The bot takes a vacancy with one “Share” from the hh app, sets deadlines and flags silence on its own. The main screen answers one question: <strong>what I need to do, and what I am waiting for.</strong></span></span></li>
+      <li><b><span lang="ru">Итог</span><span lang="en">Result</span></b><span><span lang="ru">Работающий бот, Mini App и&nbsp;веб, которыми пользуюсь каждый день. Макеты в&nbsp;Figma: дизайн-система, 25 экранов в&nbsp;светлой и&nbsp;тёмной теме, онбординг и&nbsp;пустые состояния.</span><span lang="en">A working bot, Mini App and web app I use every day. Figma: a design system, 25 screens in light and dark, onboarding and empty states.</span></span></li>
+      <li><b><span lang="ru">Чему научил</span><span lang="en">What it taught me</span></b><span><span lang="ru">Данные собственного использования показали, что ручной ввод&nbsp;— главный барьер, а&nbsp;hh сам показывает статусы откликов. Поэтому продукт не&nbsp;запущен на&nbsp;всех: <strong>сначала проверка спроса, потом сервер и&nbsp;реклама.</strong></span><span lang="en">My own usage data showed manual entry is the main barrier, and hh already shows application statuses. So the product is not open to everyone: <strong>demand check first, servers and ads later.</strong></span></span></li>
+    </ul>
+  </section>
+
+  <section class="sec" id="app">
+    <div class="sec__head"><h2><span lang="ru">Продукт</span><span lang="en">The product</span></h2><sup>02</sup></div>
+    <div class="shots">
+      <figure class="reveal"><a class="shot" href="img/today.webp" target="_blank" rel="noopener"><img src="img/today.webp" width="1600" height="1000" alt="Экран «Сегодня»" loading="lazy"></a>
+        <figcaption><b><span lang="ru">Сегодня.</span><span lang="en">Today.</span></b> <span lang="ru">Сверху&nbsp;— «ваш ход» со&nbsp;сроками, ниже&nbsp;— «ждём ответа». Карточка показывает этапы отклика и&nbsp;одну кнопку следующего шага.</span><span lang="en">“Your move” with deadlines on top, “waiting” below. The card shows the stages and a single next-step button.</span></figcaption></figure>
+      <figure class="reveal"><a class="shot" href="img/stats.webp" target="_blank" rel="noopener"><img src="img/stats.webp" width="1600" height="1000" alt="Экран «Что работает»" loading="lazy"></a>
+        <figcaption><b><span lang="ru">Что работает.</span><span lang="en">What works.</span></b> <span lang="ru">Воронка, площадки, шаги после отклика. Где данных мало, стоит метка «мало данных» вместо вывода: <strong>10 случаев&nbsp;— минимум для сравнения.</strong></span><span lang="en">The funnel, platforms, steps after applying. Where data is thin, a “limited data” tag replaces a conclusion: <strong>10 cases is the minimum to compare.</strong></span></figcaption></figure>
+      <figure class="reveal"><a class="shot" href="img/apps.webp" target="_blank" rel="noopener"><img src="img/apps.webp" width="1600" height="1000" alt="Таблица откликов" loading="lazy"></a>
+        <figcaption><b><span lang="ru">Отклики.</span><span lang="en">Applications.</span></b> <span lang="ru">Все отклики в&nbsp;одной таблице: площадка, этап, последнее событие, что дальше. Фильтры по&nbsp;«нужно сделать», «ждём» и&nbsp;«нет ответа».</span><span lang="en">Every application in one table: platform, stage, last event, what next. Filters for “to do”, “waiting” and “no reply”.</span></figcaption></figure>
+      <figure class="reveal"><a class="shot" href="img/offer.webp" target="_blank" rel="noopener"><img src="img/offer.webp" width="1600" height="1000" alt="Светлая тема, карточка с оффером" loading="lazy"></a>
+        <figcaption><b><span lang="ru">Светлая тема.</span><span lang="en">Light theme.</span></b> <span lang="ru">Обе темы собраны на&nbsp;одних токенах из&nbsp;Figma. История показывает, откуда пришло каждое событие: почта, Telegram, вручную.</span><span lang="en">Both themes run on the same Figma tokens. The history shows where each event came from: email, Telegram, manual.</span></figcaption></figure>
+    </div>
+    <div class="phones">
+      <a class="shot reveal" href="img/m-today.webp" target="_blank" rel="noopener"><img src="img/m-today.webp" width="780" height="1688" alt="Mini App: Сегодня" loading="lazy"></a>
+      <a class="shot reveal" href="img/m-stats.webp" target="_blank" rel="noopener"><img src="img/m-stats.webp" width="780" height="1688" alt="Mini App: Что работает" loading="lazy"></a>    </div>
+    <p class="note"><span lang="ru">Mini App внутри Telegram: ищут работу с&nbsp;телефона, поэтому мобильная версия&nbsp;— основная, а&nbsp;не&nbsp;урезанная.</span><span lang="en">The Mini App lives inside Telegram: people job hunt on their phones, so mobile is the main version, not a cut-down one.</span></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec__head"><h2><span lang="ru">Ключевые решения</span><span lang="en">Key decisions</span></h2><sup>03</sup></div>
+    <ul class="facts">
+      <li><b><span lang="ru">Telegram, а&nbsp;не&nbsp;расширение</span><span lang="en">Telegram, not an extension</span></b><span><span lang="ru">Ищут работу в&nbsp;приложении hh на&nbsp;телефоне, а&nbsp;там расширения браузера не&nbsp;работают. «Поделиться» в&nbsp;бот есть в&nbsp;любом приложении.</span><span lang="en">People job hunt in the hh phone app, where browser extensions do not exist. “Share” to a bot works from any app.</span></span></li>
+      <li><b><span lang="ru">Чей ход&nbsp;— главная ось</span><span lang="en">Whose move is the main axis</span></b><span><span lang="ru">Не&nbsp;двенадцать статусов, а&nbsp;две группы: что делать мне и&nbsp;чего ждать от&nbsp;них. Статус&nbsp;— деталь внутри карточки.</span><span lang="en">Not twelve statuses but two groups: what I do and what I wait for. The status is a detail inside the card.</span></span></li>
+      <li><b><span lang="ru">Осознанные границы</span><span lang="en">Deliberate limits</span></b><span><span lang="ru">Без автооткликов, массового парсинга и&nbsp;паролей от&nbsp;hh. Имена и&nbsp;личные контакты рекрутеров вырезаются при записи, по&nbsp;формулировкам 152-ФЗ; данные компаний сохраняются.</span><span lang="en">No auto-applying, no mass scraping, no hh passwords. Recruiters’ names and personal contacts are stripped on write, following Russian data law; company details are kept.</span></span></li>
+      <li><b><span lang="ru">Честная статистика</span><span lang="en">Honest stats</span></b><span><span lang="ru">Отклики без ответа считаются наравне с&nbsp;остальными, иначе воронка врёт. Выводов на&nbsp;маленьких числах нет&nbsp;— только метка.</span><span lang="en">Unanswered applications count like the rest, or the funnel lies. No conclusions on small numbers&nbsp;— just a tag.</span></span></li>
+    </ul>
+    <div class="clinks">
+      <a class="ulink" href="../"><span lang="ru">Все кейсы</span><span lang="en">All work</span><svg aria-hidden="true"><use href="#arr"/></svg></a>
+    </div>
+  </section>
+</main>
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <p class="eyebrow"><span lang="ru">Контакты</span><span lang="en">Contact</span></p>
+    <div class="contact__row">
+      <h2><span lang="ru">Делаю сложные данные понятными.</span><span lang="en">Making complex data clear.</span></h2>
+      <a class="mail" href="https://t.me/gotodata">Telegram @gotodata <svg width="14" height="14" aria-hidden="true"><use href="#arr"/></svg></a>
+    </div>
+    <div class="legal" style="padding-top:28px"><span>© 2026 <span lang="ru">Кирилл</span><span lang="en">Kirill</span></span><a href="../"><span lang="ru">На главную</span><span lang="en">Home</span> ↑</a></div>
+  </div>
+</footer>
+<script>
+(function () {
+  var root = document.documentElement;
+  function get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  var lang = new URLSearchParams(location.search).get('lang') || get('lang') || 'ru';
+  var langBtn = document.getElementById('lang');
+  function apply(l) {
+    lang = l; root.dataset.lang = l; root.lang = l; langBtn.textContent = l === 'ru' ? 'EN' : 'RU';
+    document.title = l === 'ru' ? 'Отклик — кейс | Кирилл' : 'Otklik — case study | Kirill';
+  }
+  apply(lang);
+  langBtn.addEventListener('click', function () { apply(lang === 'ru' ? 'en' : 'ru'); set('lang', lang); });
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else { items.forEach(function (el) { el.classList.add('is-in'); }); }
+})();
+</script>
+</body>
+</html>
